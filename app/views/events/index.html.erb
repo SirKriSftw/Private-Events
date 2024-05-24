@@ -1,1 +1,10 @@
 <h1>All Events!</h1>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete} %>    
+<ul style = "list-style: none;">
+<% @events.each do |event| %>
+    <li style = "border: 2px solid black;">
+        <%= "#{event.title}" %> <br />
+    </li>
+    <br />
+<% end %>
+</ul>

@@ -11,3 +11,18 @@
     <br />
 <% end %>
 </ul>
+
+<h1> <%= @user.email %> is going to these events </h1>
+
+<ul style = "list-style: none;">
+<% @attended_events.each do |event| %>
+    <li style = "border: 2px solid black;">
+        <%= "Host: #{event.creator.email}"%> <br />
+        <%= event.title %> <br />
+        <%= event.place %> <br />
+        <%= event.date.strftime("%m/%d/%y") %>
+        <%= event.time.strftime("%I:%M%p") %>
+    </li>
+    <br />
+<% end %>
+</ul>

@@ -3,7 +3,7 @@
 <ul style = "list-style: none;">
 <% @events.each do |event| %>
     <li style = "border: 2px solid black;">
-        <%= "#{event.title}" %> <br />
+        <%= link_to event.title, event_path(event)%> <%= "hosted by: #{event.creator.email}"%><br />
     </li>
     <br />
 <% end %>

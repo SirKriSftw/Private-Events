@@ -1,11 +1,23 @@
 <%= form_with model: @event do |form| %>
     <%= form.label :title %>
-    <%= form.text_field :title %><br>
+    <%= form.text_field :title %>
+    <% @event.errors.full_messages_for(:title).each do |message| %>
+      <div style = "color:red"><%= message %></div>
+    <% end %><br>
     <%= form.label :place %>
-    <%= form.text_field :place %><br>
+    <%= form.text_field :place %>
+    <% @event.errors.full_messages_for(:place).each do |message| %>
+      <div style = "color:red"><%= message %></div>
+    <% end %><br>
     <%= form.label :date %>
-    <%= form.date_field :date %><br>
+    <%= form.date_field :date %>
+    <% @event.errors.full_messages_for(:date).each do |message| %>
+      <div style = "color:red"><%= message %></div>
+    <% end %><br>
     <%= form.label :time %>
-    <%= form.time_field :time %><br>
+    <%= form.time_field :time %>
+    <% @event.errors.full_messages_for(:time).each do |message| %>
+      <div style = "color:red"><%= message %></div>
+    <% end %><br>
     <%= form.submit %>
   <% end %>

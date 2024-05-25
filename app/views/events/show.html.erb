@@ -1,8 +1,8 @@
 <h1> <%= @event.title %></h1>
 <%= "Hosted by: #{@event.creator.email}" %> <br />
 <%= @event.place %> <br />
-<%= @event.date.strftime("%m/%d/%y") %>
-<%= @event.time.strftime("%I:%M%p") %>
+<%= @event.date.strftime("%m/%d/%y") %><br />
+<%= @event.time.strftime("%I:%M%p") %><br />
 
 <% if current_user == @event.creator %>
     <%= button_to "Delete Event", event_path(@event), method: :delete%>     
